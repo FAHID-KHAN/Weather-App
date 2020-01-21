@@ -1,0 +1,12 @@
+version: '2.4'
+services:
+  backend:
+    image: ${BACKEND_IMAGE}
+    ports:
+      - '9000:5000'
+    restart: always
+  frontend:
+    image: ${FRONTEND_IMAGE}
+    ports:
+      - '8080:3000'
+    restart: always

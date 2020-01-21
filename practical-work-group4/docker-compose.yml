@@ -1,0 +1,20 @@
+version: '2.4'
+services:
+  backend:
+    build:
+      context: ./backend
+      #dockerfile: Dockerfile #If the file is named differently, you need this line also
+    ports:
+      - '5000:5000'
+    volumes:
+      - ./backend:/opt/app
+    restart: always
+  frontend:
+    build:
+      context: ./frontend
+      #dockerfile: Dockerfile #If the file is named differently, you need this line also
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./frontend:/opt/app
+    restart: always

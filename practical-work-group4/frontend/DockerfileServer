@@ -1,0 +1,9 @@
+FROM node:alpine
+
+WORKDIR /opt/app
+
+COPY ./ /opt/app
+
+RUN cd /opt/app && npm install && npm run build
+
+CMD ["npm", "run", "start"]
